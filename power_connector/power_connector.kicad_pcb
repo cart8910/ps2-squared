@@ -8,8 +8,8 @@
 	)
 	(paper "A4")
 	(layers
-		(0 "F.Cu" signal)
-		(2 "B.Cu" signal)
+		(0 "F.Cu" power)
+		(2 "B.Cu" power)
 		(9 "F.Adhes" user "F.Adhesive")
 		(11 "B.Adhes" user "B.Adhesive")
 		(13 "F.Paste" user)
@@ -34,6 +34,45 @@
 		(45 "User.4" user)
 	)
 	(setup
+		(stackup
+			(layer "F.SilkS"
+				(type "Top Silk Screen")
+			)
+			(layer "F.Paste"
+				(type "Top Solder Paste")
+			)
+			(layer "F.Mask"
+				(type "Top Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "F.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "dielectric 1"
+				(type "core")
+				(thickness 1.51)
+				(material "FR4")
+				(epsilon_r 4.5)
+				(loss_tangent 0.02)
+			)
+			(layer "B.Cu"
+				(type "copper")
+				(thickness 0.035)
+			)
+			(layer "B.Mask"
+				(type "Bottom Solder Mask")
+				(thickness 0.01)
+			)
+			(layer "B.Paste"
+				(type "Bottom Solder Paste")
+			)
+			(layer "B.SilkS"
+				(type "Bottom Silk Screen")
+			)
+			(copper_finish "None")
+			(dielectric_constraints no)
+		)
 		(pad_to_mask_clearance 0)
 		(allow_soldermask_bridges_in_footprints no)
 		(tenting
@@ -82,9 +121,9 @@
 			(subtractmaskfromsilk no)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "../")
 		)
 	)
 	(footprint "MountingHole:MountingHole_2.2mm_M2"
@@ -886,14 +925,14 @@
 		)
 		(polygon
 			(pts
-				(xy 150.5 96.5) (xy 150.5 116.5) (xy 153.5 116.5) (xy 153.5 110.5) (xy 158.5 100) (xy 158.5 96.5)
+				(xy 150.5 96.5) (xy 150.5 116.5) (xy 155 116.5) (xy 155 107.35) (xy 158.5 100) (xy 158.5 96.5)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
 				(xy 158.443039 96.519685) (xy 158.488794 96.572489) (xy 158.5 96.624) (xy 158.5 99.971982) (xy 158.487955 100.025294)
-				(xy 153.5 110.500001) (xy 153.5 116.376) (xy 153.480315 116.443039) (xy 153.427511 116.488794) (xy 153.376 116.5)
+				(xy 155 107.350001) (xy 155 116.376) (xy 154.980315 116.443039) (xy 154.927511 116.488794) (xy 154.876 116.5)
 				(xy 150.624 116.5) (xy 150.556961 116.480315) (xy 150.511206 116.427511) (xy 150.5 116.376) (xy 150.5 96.624)
 				(xy 150.519685 96.556961) (xy 150.572489 96.511206) (xy 150.624 96.5) (xy 158.376 96.5)
 			)
@@ -917,15 +956,15 @@
 		)
 		(polygon
 			(pts
-				(xy 140.5 96.5) (xy 148.5 96.5) (xy 148.5 116.5) (xy 145.5 116.5) (xy 145.5 110.5) (xy 140.5 100)
+				(xy 140.5 96.5) (xy 148.5 96.5) (xy 148.5 116.5) (xy 144 116.5) (xy 144 107.35) (xy 140.5 100)
 			)
 		)
 		(filled_polygon
 			(layer "F.Cu")
 			(pts
 				(xy 148.443039 96.519685) (xy 148.488794 96.572489) (xy 148.5 96.624) (xy 148.5 116.376) (xy 148.480315 116.443039)
-				(xy 148.427511 116.488794) (xy 148.376 116.5) (xy 145.624 116.5) (xy 145.556961 116.480315) (xy 145.511206 116.427511)
-				(xy 145.5 116.376) (xy 145.5 110.500001) (xy 140.512045 100.025294) (xy 140.5 99.971982) (xy 140.5 96.624)
+				(xy 148.427511 116.488794) (xy 148.376 116.5) (xy 144.124 116.5) (xy 144.056961 116.480315) (xy 144.011206 116.427511)
+				(xy 144 116.376) (xy 144 107.350001) (xy 140.512045 100.025294) (xy 140.5 99.971982) (xy 140.5 96.624)
 				(xy 140.519685 96.556961) (xy 140.572489 96.511206) (xy 140.624 96.5) (xy 148.376 96.5)
 			)
 		)
